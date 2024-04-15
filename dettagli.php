@@ -14,10 +14,7 @@ $result = $mysqli->query($sql);
 <div class="container  ">
     <div class="row">
         <div class="col">
-
-        
             <div class="card-deck d-flex gap-3 ">
-
                 <?php
                     while($row = $result->fetch_assoc()) {
                         ?>
