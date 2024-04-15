@@ -3,12 +3,13 @@ include_once('config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
     $id = $_POST['id'];
-    $titolo = $_POST['titolo'];
-    $autore = $_POST['autore'];
-    $anno_di_pubblicazione = $_POST['anno_pubblicazione'];
-    $genere = $_POST['genere'];
+    $titolo = mysqli_real_escape_string($mysqli, $_POST['titolo']);
+    $autore = mysqli_real_escape_string($mysqli, $_POST['autore']);
+    $anno_pubblicazione = mysqli_real_escape_string($mysqli, $_POST['anno_pubblicazione']);
+    $genere = mysqli_real_escape_string($mysqli, $_POST['genere']);
+    $immagine = mysqli_real_escape_string($mysqli, $_POST['immagine']);
 
-    $sql = "UPDATE libri SET titolo='$titolo', autore='$autore', anno_pubblicazione='$anno_pubblicazione', genere='$genere' WHERE id=$id";
+    $sql = "UPDATE libri SET titolo='$titolo', autore='$autore', anno_pubblicazione='$anno_pubblicazione', genere='$genere', immagine='$immagine' WHERE id=$id";
 
     if ($mysqli->query($sql) === TRUE) {
         echo "Dati aggiornati correttamente";

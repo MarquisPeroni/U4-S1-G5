@@ -18,6 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST['genere'])) {
         $errors[] = "Il campo Genere è obbligatorio.";
     }
+    if (empty($_POST['immagine'])) {
+        $errors[] = "Il campo Immagine è obbligatorio.";
+    }
 
     if (empty($errors)) {
         $mysqli = new mysqli($config['mysql_host'], $config['mysql_user'], $config['mysql_password'], 'gestione_libreria');
@@ -28,8 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $autore = $_POST['autore'];
         $anno_pubblicazione = $_POST['anno_pubblicazione'];
         $genere = $_POST['genere'];
+        $immagine = $_POST['immagine'];
 
-        $sql = "INSERT INTO libri (titolo, autore, anno_pubblicazione, genere) VALUES ('$titolo', '$autore', '$anno_pubblicazione', '$genere')";
+        $sql = "INSERT INTO libri (titolo, autore, anno_pubblicazione, genere, immagine) VALUES ('$titolo', '$autore', '$anno_pubblicazione', '$genere', '$immagine')";
         
         if ($mysqli->query($sql) === TRUE) {
             echo "I dati sono stati inseriti correttamente";

@@ -33,6 +33,10 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <label for="genere" class="form-label">Genre</label>
                     <input type="tel" class="form-control" id="genere" placeholder="Genere.." name="genere" value="<?php echo $row['genere']; ?>">
                 </div>
+                <div class="mb-3">
+                    <label for="immagine" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="immagine" placeholder="Immagine.." name="immagine" value="<?php echo $row['immagine']; ?>">
+                </div>
                 <button type="submit" class="btn btn-dark">Update</button>
             </form>
         </div>

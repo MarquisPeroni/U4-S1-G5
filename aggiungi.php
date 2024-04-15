@@ -22,6 +22,10 @@
                 <label for="genere" class="form-label fw-bold text-white">Genre</label>
                 <input type="tel" class="form-control" id="genere" placeholder="Genere..." name="genere">
             </div>
+            <div class="mb-3">
+                <label for="immagine" class="form-label fw-bold text-white">Image</label>
+                <input type="tel" class="form-control" id="immagine" placeholder="immagine..." name="immagine">
+            </div>
             <button type="submit" class="btn btn-dark">Add a Book</button>
         </form>
     </div>
